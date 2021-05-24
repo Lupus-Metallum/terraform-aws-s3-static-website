@@ -19,3 +19,9 @@ variable "storage_class" {
   default = "STANDARD"
   description = "The object storage class to use for this site, defaults to STANDARD"
 }
+
+variable "cache_control" {
+  type = string
+  default = "max-age=1440"
+  description = "The header to use for cache control"
+}
