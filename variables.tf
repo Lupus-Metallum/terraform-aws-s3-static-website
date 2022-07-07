@@ -31,3 +31,9 @@ variable "content_language" {
   default     = "en-US"
   description = "en-US or en-GB for language header?"
 }
+
+variable "sse_encrypt" {
+  type        = bool
+  default     = true
+  description = "Should we apply SSE for objects created by this module?"
+}
