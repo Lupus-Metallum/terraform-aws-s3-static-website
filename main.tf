@@ -8,7 +8,7 @@ resource "random_pet" "this" {
 resource "aws_s3_object" "this" {
   for_each = fileset(var.file_path, "**")
 
-  content_type           = lookup(jsondecode(file("${path.module}/src/mime.json")), regex("\\.[^.]+$", each.value), null)
+  content_type           = lookup(jsondecode(file("${path.module}/src/mime.json")), regex("\\.[^.]+$", each.value), "text/plain")
   content_language       = var.content_language
   cache_control          = var.cache_control
   acl                    = var.acl
